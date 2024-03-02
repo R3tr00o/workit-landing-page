@@ -1,0 +1,126 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  /* colors */
+  --clr-purple: hsl(273, 85%, 13%);
+  --clr-accent: hsl(150, 100%, 63%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-dark-text: hsl(271, 12%, 34%);
+  --clr-light-text: hsl(276, 100%, 99%);
+
+  /* font families */
+  --ff-base: "Manrope", sans-serif;
+  --ff-serif: "Fraunces", sans-serif;
+
+  /* font sizes */
+  --fs-900: 5rem;
+  --fs-700: 3.5rem;
+  --fs-600: 3rem;
+  --fs-500: 2rem;
+  --fs-400: 0.625rem;
+
+  /* font weights */
+  --fw-regular: 400;
+  --fw-bold: 600;
+}
+
+/* UTILITY */
+body {
+  font-family: var(--ff-base);
+}
+
+.container {
+  margin: 0 1rem;
+}
+
+.header {
+  background-color: var(--clr-purple);
+  padding-top: 2rem;
+  padding-bottom: 5rem;
+  position: relative;
+}
+
+.header::after {
+  content: "";
+  position: absolute;
+  background-color: var(--clr-purple);
+  width: 150%;
+  height: 13rem;
+  border-radius: 50%;
+  bottom: 0;
+  transform: translate(-14.5%, 50%);
+  z-index: -1;
+}
+
+.heading {
+  font-family: var(--ff-serif);
+  font-weight: var(--fw-bold);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4em;
+}
+
+.logo {
+  padding: 0.5rem 0;
+}
+
+.btn--apply {
+  color: var(--clr-light-text);
+  background-color: transparent;
+  border: hidden;
+  /* border-bottom: 3px solid var(--clr-accent); */
+  box-shadow: 0 3px var(--clr-accent);
+  padding: 0.5rem 0;
+  align-self: flex-end;
+}
+
+.heading--primary {
+  font-size: var(--fs-600);
+  color: var(--clr-light-text);
+  text-align: center;
+  max-width: 14ch;
+  margin: 0 auto;
+  margin-bottom: 1em;
+
+  & .underline {
+    border-bottom: 3px solid var(--clr-accent);
+  }
+}
+
+.btn--cta {
+  display: block;
+  max-width: fit-content;
+  text-decoration: none;
+  color: var(--clr-purple);
+  font-weight: var(--fw-bold);
+  background-color: var(--clr-accent);
+  margin: 0 auto;
+  padding: 1.2rem 1.85rem;
+}
+
+.phone-img {
+  z-index: 2;
+}
