@@ -3,21 +3,20 @@
   --clr-purple: hsl(273 85% 13%);
   --clr-accent: hsl(150 100% 63%);
   --clr-white: hsl(0 0% 100%);
-  --clr-dark-text: hsl(271 12% 34%);
-  --clr-light-text: hsl(276 100% 99%);
+  --clr-dark: hsl(271 12% 34%);
+  --clr-dark-white: hsl(276 100% 99%);
 
   /* font families */
   --ff-base: "Manrope", sans-serif;
   --ff-serif: "Fraunces", sans-serif;
 
   /* font sizes */
-  --fs-900: 5rem;
-  --fs-700: 3.5rem;
-  --fs-600: 3rem;
-  --fs-500: 2rem;
-  --fs-400: 1.75rem;
-  --fs-300: 1rem;
-  --fs-200: 0.625rem;
+
+  --fs-700: 3.125rem; /* 50px */
+  --fs-600: 2rem; /* 32px */
+  --fs-500: 1.75rem; /* 28px */
+  --fs-400: ; /* 20px */
+  --fs-300: 1rem; /* 16px */
 
   /* font weights */
   --fw-regular: 400;
@@ -64,16 +63,10 @@ body {
   min-height: 100vh;
 }
 
-.bg--dark-white {
-  background-color: var(--clr-light-text);
-}
-
-.bg--purple {
-  background-color: var(--clr-purple);
-}
-
-.bg--white {
-  background-color: var(--clr-white);
+.container {
+  padding-inline: 1em;
+  margin-inline: auto;
+  max-width: 80rem;
 }
 
 .flex {
@@ -86,20 +79,71 @@ body {
   gap: var(--gap, 1rem);
 }
 
-.container {
-  padding-inline: 1em;
-  margin-inline: auto;
-  max-width: 80rem;
+/* colors */
+
+.bg-dark-white {
+  background-color: var(--clr-dark-white);
+}
+.bg-purple {
+  background-color: var(--clr-purple);
+}
+.bg-white {
+  background-color: var(--clr-white);
+}
+.bg-accent {
+  background-color: var(--clr-accent);
+}
+
+.text-white {
+  color: var(--clr-white);
+}
+.text-purple {
+  color: var(--clr-purple);
+}
+.text-dark {
+  color: var(--clr-dark);
+}
+
+/* typography */
+
+.ff-serif {
+  font-family: var(--ff-serif);
+}
+.ff-sans {
+  font-family: var(--ff-base);
+}
+
+.fw-regular {
+  font-weight: var(--fw-regular);
+}
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.letter-spacing-1 {
+  letter-spacing: -0.16px;
+}
+
+.fs-700 {
+  font-size: var(--fs-700);
+}
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-300 {
+  font-size: var(--fs-300);
 }
 
 .header {
   padding-top: 2rem;
   padding-bottom: 10em;
   position: relative;
-}
-
-.heading {
-  font-family: var(--ff-serif);
 }
 
 .nav {
@@ -113,24 +157,17 @@ body {
 }
 
 .btn--apply {
-  color: var(--clr-light-text);
-  background-color: transparent;
   border: hidden;
-  /* border-bottom: 3px solid var(--clr-accent); */
   box-shadow: 0 3px var(--clr-accent);
   padding: 0.5rem 0;
   align-self: flex-end;
 }
 
 .heading--primary {
-  font-size: var(--fs-600);
-  color: var(--clr-light-text);
   text-align: center;
-  max-width: 14ch;
-  margin: 0 auto;
+  margin-inline: auto;
   margin-bottom: 1em;
-  letter-spacing: -2px;
-
+  letter-spacing: -1px;
   & .underline {
     border-bottom: 3px solid var(--clr-accent);
   }
@@ -138,12 +175,11 @@ body {
 
 .btn--cta {
   display: block;
+  border: hidden;
   max-width: fit-content;
   text-decoration: none;
-  color: var(--clr-purple);
-  font-weight: var(--fw-bold);
-  background-color: var(--clr-accent);
-  margin: 0 auto;
+  margin-inline: auto;
+  letter-spacing: -0.16px;
   padding: 1.2rem 1.85rem;
 }
 
@@ -155,9 +191,9 @@ body {
 }
 
 .section--feature {
-  --gap: 2.5rem;
+  --gap: 4em;
   padding-bottom: 4em;
-  margin-block-end: 6em;
+  margin-block-end: 4em;
 }
 
 article {
@@ -171,47 +207,46 @@ article {
   text-align: center;
   justify-content: center;
   align-items: center;
-  color: var(--clr-purple);
-  font-family: var(--ff-serif);
-  font-size: var(--fs-500);
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: 50%;
-  padding: 0.5em;
-  border: 1px solid var(--clr-dark-text);
-  margin-bottom: 0.5em;
+  border: 1px solid var(--clr-dark);
+  margin-bottom: 1.5em;
 }
 
 .article--heading {
-  font-family: var(--ff-serif);
-  color: var(--clr-purple);
-  font-size: var(--fs-500);
-  letter-spacing: -1px;
   text-align: center;
-  margin-bottom: 0.7em;
+  margin-bottom: 0.5em;
 }
 
 .article--text {
   text-align: center;
-  line-height: 1.7;
-  font-size: var(--fs-300);
+  line-height: 1.75;
+}
+
+.section--testimonial {
 }
 
 .founder-img {
   max-width: 85%;
   margin-inline: auto;
+  transform: translateY(18%);
 }
 
 .testimonial {
+  padding: 2.5rem 1.8rem;
+  z-index: 5;
+  position: relative;
 }
 
 .testimonial--heading {
-  font-family: var(--ff-serif);
-  font-size: var(--fs-500);
   text-align: center;
+  letter-spacing: 1.2px;
+  margin-block-end: 0.8em;
 }
 
 .testimonial--text {
   text-align: center;
-  line-height: 1.8;
+  line-height: 1.75;
+  margin-block-end: 2em;
 }
