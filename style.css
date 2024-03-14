@@ -23,6 +23,12 @@
   --fw-bold: 600;
 }
 
+@media (min-width: 48em) {
+  :root {
+    --fs-700: 3.75rem;
+  }
+}
+
 *,
 *::before,
 *::after {
@@ -161,6 +167,12 @@ body {
   box-shadow: 0 3px var(--clr-accent);
   padding: 0.5rem 0;
   align-self: flex-end;
+  transition: all 400ms;
+}
+
+.btn--apply:hover {
+  cursor: pointer;
+  color: var(--clr-accent);
 }
 
 .heading--primary {
@@ -181,6 +193,14 @@ body {
   margin-inline: auto;
   letter-spacing: -0.16px;
   padding: 1.2rem 1.85rem;
+  transition: all 400ms;
+}
+
+.btn--cta:hover {
+  cursor: pointer;
+  color: var(--clr-accent);
+  background-color: var(--clr-purple);
+  box-shadow: inset 0 0 0 2px var(--clr-accent);
 }
 
 .phone-img {
@@ -193,7 +213,7 @@ body {
 .section--feature {
   --gap: 4em;
   padding-bottom: 4em;
-  margin-block-end: 4em;
+  margin-block-end: 2em;
 }
 
 article {
@@ -225,6 +245,7 @@ article {
 }
 
 .section--testimonial {
+  margin-block-end: 4em;
 }
 
 .founder-img {
@@ -249,4 +270,20 @@ article {
   text-align: center;
   line-height: 1.75;
   margin-block-end: 2em;
+}
+
+.footer {
+  justify-content: center;
+  --gap: 3em;
+  padding-bottom: 3em;
+}
+
+.footer--logo {
+  justify-self: center;
+}
+
+.media--list {
+  list-style: none;
+  align-items: center;
+  --gap: 2em;
 }
