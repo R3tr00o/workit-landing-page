@@ -34,7 +34,7 @@
   :root {
     --fs-700: 5rem;
     --fs-600: 3.5rem;
-    --fs-500: 2rem;;
+    --fs-500: 2rem;
     --fs-400: 1.5rem;
     --fs-300: 1.125rem;
   }
@@ -74,7 +74,6 @@ img {
   }
 }
 
-
 /* UTILITY */
 body {
   font-family: var(--ff-base);
@@ -85,6 +84,12 @@ body {
   padding-inline: 1em;
   margin-inline: auto;
   max-width: 80rem;
+}
+
+@media (width >= 48em) {
+  .container {
+    padding-inline: 2.5em;
+  }
 }
 
 .flex {
@@ -160,10 +165,9 @@ body {
 
 .header {
   padding-block-start: 2rem;
-  padding-bottom: 10em;
-  padding-block-end: min()
+  /* padding-bottom: 10em; */
+  padding-block-end: clamp(10em, 20%, 18em);
   position: relative;
-  box-shadow: inset 0 0 0 2px red;
 }
 
 .nav {
@@ -240,16 +244,21 @@ article {
   align-items: center;
 }
 
+.article--grid {
+  --gap: 0;
+}
+
 .article--number {
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
+  justify-self: center;
   width: 3rem;
   height: 3rem;
   border-radius: 50%;
   border: 1px solid var(--clr-dark);
-  margin-bottom: 1.5em;
+  margin-block-end: 1.5em;
 }
 
 .article--heading {
@@ -260,6 +269,33 @@ article {
 .article--text {
   text-align: center;
   line-height: 1.75;
+}
+
+/* Tablet media */
+@media (width >= 48em) {
+  .section--feature {
+    /* max-width: 38rem; */
+    justify-items: center;
+    margin-block-end: 14em;
+  }
+
+  .article--grid {
+    grid-template-columns: auto 1fr;
+    column-gap: 2em;
+  }
+
+  .article--number {
+    grid-row: 1/3;
+  }
+
+  .article--heading {
+    text-align: start;
+  }
+
+  .article--text {
+    text-align: start;
+    max-width: 49ch;
+  }
 }
 
 .section--testimonial {
@@ -288,6 +324,39 @@ article {
   text-align: center;
   line-height: 1.75;
   margin-block-end: 2em;
+}
+
+/* Tablet media */
+@media (width >= 48em) {
+  .section--testimonial {
+    position: relative;
+  }
+
+  .founder-img {
+    max-width: 36%;
+    position: absolute;
+    top: -32%;
+    margin-inline: 0;
+    transform: translateY(0%);
+  }
+
+  .testimonial {
+    padding: 3em 4em;
+    max-width: 75%;
+    margin-inline-start: auto;
+  }
+
+  .testimonial--heading {
+    text-align: start;
+  }
+
+  .testimonial--text {
+    text-align: start;
+  }
+
+  .testimonial--btn {
+    margin-inline-start: 0;
+  }
 }
 
 .footer {
