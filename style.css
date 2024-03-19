@@ -165,9 +165,28 @@ body {
 
 .header {
   padding-block-start: 2rem;
-  /* padding-bottom: 10em; */
+
   padding-block-end: clamp(10em, 20%, 18em);
   position: relative;
+  overflow-x: hidden;
+}
+
+@media (width >= 48em) {
+  .header::before {
+    content: url("images/bg-pattern-1.svg");
+    position: absolute;
+    top: 5em;
+    left: -14em;
+    overflow: hidden;
+  }
+
+  .header::after {
+    content: url("images/bg-pattern-2.svg");
+    position: absolute;
+    top: 350px;
+    right: -110px;
+    overflow: hidden;
+  }
 }
 
 .nav {
@@ -229,12 +248,15 @@ body {
   z-index: 2;
   margin: 0 auto 0 auto;
   width: clamp(20rem, 50%, 48rem);
-  transform: translateY(-45%);
+  left: 50%;
+  transform: translate(-50%, -45%);
+  position: absolute;
 }
 
 .section--feature {
   --gap: 4em;
   padding-bottom: 4em;
+  padding-block-start: clamp(10em, 20%, 24em);
   margin-block-end: 2em;
 }
 
@@ -272,7 +294,7 @@ article {
 }
 
 /* Tablet media */
-@media (width >= 48em) {
+@media (90em > width >= 48em) {
   .section--feature {
     /* max-width: 38rem; */
     justify-items: center;
@@ -295,6 +317,14 @@ article {
   .article--text {
     text-align: start;
     max-width: 49ch;
+  }
+}
+
+@media (width >= 90em) {
+  .section--feature {
+    display: flex;
+    padding-block-end: 8em;
+    margin-block-end: 14em;
   }
 }
 
@@ -333,7 +363,7 @@ article {
   }
 
   .founder-img {
-    max-width: 36%;
+    max-width: clamp(17.5rem, 30%, 30rem);
     position: absolute;
     top: -32%;
     margin-inline: 0;
@@ -344,6 +374,7 @@ article {
     padding: 3em 4em;
     max-width: 75%;
     margin-inline-start: auto;
+    position: relative;
   }
 
   .testimonial--heading {
@@ -356,6 +387,15 @@ article {
 
   .testimonial--btn {
     margin-inline-start: 0;
+  }
+
+  .testimonial::after {
+    content: url("images/bg-pattern-3.svg");
+    position: absolute;
+    top: 280px;
+    right: 50px;
+    z-index: 5;
+    overflow-x: hidden;
   }
 }
 
@@ -374,3 +414,7 @@ article {
   align-items: center;
   --gap: 2em;
 }
+
+/* * {
+  outline: 1px solid #f00 !important;
+} */
